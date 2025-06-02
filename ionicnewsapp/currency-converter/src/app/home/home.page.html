@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Conversor de Moedas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Conversor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Valor</ion-label>
+    <ion-input type="number" [(ngModel)]="amount" placeholder="0.00"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="5">
+        <ion-item>
+          <ion-label position="stacked">De</ion-label>
+          <ion-select [(ngModel)]="fromCurrency" interface="action-sheet" placeholder="Selecionar">
+            <ion-select-option *ngFor="let currency of availableCurrencies" [value]="currency">
+              {{ currency }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-button fill="clear" (click)="swapCurrencies()">
+          <ion-icon name="swap-horizontal-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="5">
+        <ion-item>
+          <ion-label position="stacked">Para</ion-label>
+          <ion-select [(ngModel)]="toCurrency" interface="action-sheet" placeholder="Selecionar">
+            <ion-select-option *ngFor="let currency of availableCurrencies" [value]="currency">
+              {{ currency }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" (click)="convert()" [disabled]="!amount || !fromCurrency || !toCurrency || isLoading">
+    <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+    <span *ngIf="!isLoading">Converter</span>
+  </ion-button>
+
+  <div *ngIf="conversionResult !== null && conversionResult !== undefined" class="result-display ion-margin-top ion-padding ion-text-center">
+    <h2>{{ amount }} {{ fromCurrency }} =</h2>
+    <h1>{{ conversionResult | number:'1.2-4' }} {{ toCurrency }}</h1>
+    <p>(Taxa: 1 {{ fromCurrency }} = {{ currentRate | number:'1.4-6' }} {{ toCurrency }})</p>
+  </div>
+
+  <ion-text color="danger" *ngIf="errorMessage" class="ion-padding-top">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
+
+</ion-content>

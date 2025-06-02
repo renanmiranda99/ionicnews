@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Histórico
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirmClearHistory()">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Histórico</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="conversionHistory.length === 0" class="ion-padding ion-text-center empty-history">
+    <ion-icon name="archive-outline" size="large"></ion-icon>
+    <p>Nenhuma conversão no histórico ainda.</p>
+  </div>
+
+  <ion-list *ngIf="conversionHistory.length > 0">
+    <ion-item *ngFor="let record of conversionHistory" lines="inset">
+      <ion-label>
+        <h2>
+          {{ record.amount | number:'1.2-2' }} {{ record.fromCurrency }}
+          <ion-icon name="arrow-forward-outline" class="ion-padding-start ion-padding-end"></ion-icon>
+          {{ record.result | number:'1.2-4' }} {{ record.toCurrency }}
+        </h2>
+        <p>Taxa: 1 {{ record.fromCurrency }} = {{ record.rate | number:'1.4-6' }} {{ record.toCurrency }}</p>
+        <p><small>{{ record.timestamp | date:'dd/MM/yyyy HH:mm' }}</small></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

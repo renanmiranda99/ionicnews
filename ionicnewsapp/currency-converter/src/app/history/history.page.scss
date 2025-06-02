@@ -1,0 +1,12 @@
+.empty-history {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--ion-color-medium-shade);
+
+  ion-icon {
+    font-size: 4rem; 
+    margin-bottom: 10px;
+  }
+}
