@@ -59,13 +59,18 @@ O aplicativo utiliza a [ExchangeRate-API](https://www.exchangerate-api.com/) par
     npm install
     ```
 
-4.  **Execute o aplicativo no navegador (para desenvolvimento):**
+4.  **Execute o comando para instalar o ionic:**
+    ```bash
+    npm install -g @ionic/cli
+    ```
+
+5.  **Execute o aplicativo no navegador (para desenvolvimento):**
     ```bash
     ionic serve
     ```
     O aplicativo estará disponível em `http://localhost:8100`.
 
-5.  **(Opcional) Para build e execução em dispositivos/emuladores Android:**
+6.  **(Opcional) Para build e execução em dispositivos/emuladores Android:**
     ```bash
     # Adicionar plataforma Android (apenas na primeira vez)
     ionic capacitor add android
