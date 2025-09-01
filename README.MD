@@ -85,7 +85,7 @@ O aplicativo utiliza a [ExchangeRate-API](https://www.exchangerate-api.com/) par
 
 ## Fluxo de Trabalho no Repositório
 
-Utilizamos um fluxo de trabalho baseado em branches para desenvolvimento. Novas funcionalidades e correções são desenvolvidas em branches separados e, após revisão, são mescladas ao branch `main`.
+Utilizei um fluxo de trabalho baseado em branches para desenvolvimento. Novas funcionalidades e correções são desenvolvidas em branches separados e, após revisão, são mescladas ao branch `main`.
 
 ## Ferramentas e Tecnologias
 
@@ -104,11 +104,6 @@ Contribuições são muito bem-vindas! Por favor, leia nosso [Guia de Contribui�
 * [Renan Argôlo Carvalho Miranda] - Gerente de Configuração
 * [Renan Argôlo Carvalho Miranda] - Documentador
 * [Renan Argôlo Carvalho Miranda] - Desenvolvedor
-
-## Por causa da má comunicação de um colega que afirmou que eu fazia parte de seu grupo e que outro colega já tinha feito praticamente tudo, mas não fazia parte do grupo, precisei fazer sozinho de última hora e infelizmente faltando alguns requisitos, pois o único grupo que se comunicou disponível aparentemente não estava se importando com o projeto.
-
-## Desde já agradeço a compreensão.
-
 
 ## Licença
 
